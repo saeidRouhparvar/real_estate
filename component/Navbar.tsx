@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, BoxProps, Flex } from "@chakra-ui/react";
 import { pxToRem } from "./Utils";
 import Typography from "./Typography";
 import { Logo } from "./svg";
@@ -6,7 +6,7 @@ import { Logo } from "./svg";
 const Navbar = () => {
   return (
     <Box px={pxToRem(261)} mt={pxToRem(100)}>
-      <Flex p={pxToRem(45)} bg={`Colors.ColorWhite`} justify={"space-between"} align={"center"}>
+      <Flex p={pxToRem(45)} bg={`Color.ColorWhite`} justify={"space-between"} align={"center"}>
         <Flex align={"center"} gap={"6px"}>
             <Box>{Logo}</Box>
             <Box mt={pxToRem(30)} {...Typography.H3}>ProperLand</Box>
