@@ -2,19 +2,28 @@ import { ComponentStyleConfig } from "@chakra-ui/react";
 import Typography from "../Typography";
 const primaryBtn = () => ({
   ...Typography.Button,
-  backgroundColor: `ColorPrimary`,
+  backgroundColor: `Color.ColorPrimary`,
   border: "1px solid",
-  borderColor: `ColorPrimary`,
-  color: `ColorWhite`,
+  borderColor: `Color.ColorPrimary`,
+  color: `Color.ColorWhite`,
   borderRadius: "5px",
   minWidth: "185px",
 });
 const secondaryBtn = () => ({
   ...Typography.Button,
-  backgroundColor: `SecondaryColor`,
+  backgroundColor: `Color.SecondaryColor`,
   border: "1px solid",
-  borderColor: `SecondaryColor`,
-  color: `ColorPrimary`,
+  borderColor: `Color.SecondaryColor`,
+  color: `Color.ColorPrimary`,
+  borderRadius: "5px",
+  minWidth: "185px",
+});
+const outLine = () => ({
+  ...Typography.Button,
+  backgroundColor: `Color.ColorWhite`,
+  border: "1px solid",
+  borderColor: `Color.ColorWhite`,
+  color: `Color.ColorPrimary`,
   borderRadius: "5px",
   minWidth: "185px",
 });
@@ -23,6 +32,7 @@ const ButtonStyle: ComponentStyleConfig = {
   variants: {
     primaryBtn,
     secondaryBtn,
+    outLine,
   },
 };
 
