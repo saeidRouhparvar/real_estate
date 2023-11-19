@@ -4,17 +4,19 @@ import { ButtonProps } from "@chakra-ui/button/dist/button";
 enum variantEnum {
   primaryBtn = "primaryBtn",
   secondaryBtn = "secondaryBtn",
+  outLine= "outLine"
 }
 
 interface Interface extends ButtonProps {
   reset?: any;
   data?: any;
-  variant?: "primaryBtn" | "secondaryBtn";
+  rightIcon?:any
+  variant?: "primaryBtn" | "secondaryBtn" | "outLine";
 }
 
-const Button = ({ data, variant, ...reset }: Interface) => {
+const Button = ({ data,rightIcon, variant, ...reset }: Interface) => {
   return (
-  <ChakraButton  variant={variant} {...reset}>{data}</ChakraButton>
+  <ChakraButton  rightIcon={rightIcon}  variant={variant} {...reset}>{data}</ChakraButton>
   )
 };
 
