@@ -3,11 +3,11 @@ import { pxToRem } from "./Utils";
 import Typography from "./Typography";
 import Container from "./Container";
 import { Circle } from "./svg";
-import VideoPic from '../public/img/PhotoVideo.png'
+import VideoPic from '../public/PhotoVideo.png'
 
 const NewsLetter = () => {
   return (
-    <Container display={"flex"}>
+    <Container display={"flex"} mt={pxToRem(100)}>
       <Flex
         bg={`Color.ContentColor2`}
         direction={"column"}
