@@ -16,7 +16,7 @@ interface Interface extends ButtonProps {
 
 const Button = ({ data,rightIcon, variant, ...reset }: Interface) => {
   return (
-  <ChakraButton  rightIcon={rightIcon}  variant={variant} {...reset}>{data}</ChakraButton>
+  <ChakraButton   rightIcon={rightIcon}  variant={variant} {...reset}>{data}</ChakraButton>
   )
 };
 
