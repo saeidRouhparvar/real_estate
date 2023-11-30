@@ -1,46 +1,64 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, BoxProps, Flex } from "@chakra-ui/react";
 import { pxToRem } from "../Utils";
 import Button from "../form/Button";
 import Typography from "../Typography";
 import { Feet, Location, Parking, Bed, Bath } from "../svg";
 import Label from "../Lable";
 
-const labelData = [
-  { id: 1, title: "3 Beds", logo: { Bed } },
-  { id: 2, title: "2 Bathes", logo: { Bath } },
-  { id: 3, title: "1 Parking", logo: { Parking } },
-  { id: 4, title: "120 sqft", logo: { Feet } },
-];
+interface Props extends BoxProps {
+  reset?: any;
+  title?: string;
+  price?: number;
+  address?: string;
+  image?:any
+  labelTitleBed?: string;
+  labelTitleBath?: string;
+  labelTitlePark?: string;
+  labelTitleFeet?: string;
+}
 
-const PropertiesBox = () => {
+const PropertiesBox = ({
+  title,
+  price,
+  address,
+  labelTitleBed,
+  labelTitleBath,
+  labelTitlePark,
+  labelTitleFeet,
+  image,
+  ...reset
+}: Props) => {
   return (
     <Flex
-      width={pxToRem(550)}
+      width={pxToRem(650)}
       direction={"column"}
       border={"1px solid #FFF"}
       padding={"39px 47px"}
       bg={`Color.ColorWhite`}
+      borderRadius={'5px'}
+      {...reset}
     >
-      <Box height={pxToRem(300)} width={"100%"} bg={`Color.ColorPrimary`}></Box>
+      <Box height={pxToRem(300)} width={"100%"} as="img" src={image} />
       <Flex justify={"space-between"} mt={pxToRem(27)} align={"center"}>
         <Box color={`Color.SecondaryColor`} {...Typography.H3}>
-          $3500/MO
+          ${price}/MO
         </Box>
         <Button variant="secondaryBtn" data={"For Sale"} />
       </Flex>
       <Box color={`Color.ColorPrimary`} {...Typography.H5} mt={pxToRem(32)}>
-        Comefortable Appartment
+        {title}
       </Box>
       <Flex mt={pxToRem(14)}>
         <Box>{Location}</Box>
-        <Box color={"#8E8E8E"} {...Typography.P}>
-          709 West Drive Chicago, IL 60606
+        <Box color={`Color.ContentColor4`} {...Typography.P}>
+          {address}
         </Box>
       </Flex>
-      <Flex justify={'space-between'}>
-        {labelData.map((item: any) => (
-          <Label key={item.id} title={item.title} logo={item.logo} />
-        ))}
+      <Flex justify={"space-between"} mt={pxToRem(25)}>
+        <Label title={labelTitleBed} logo={Bed} />
+        <Label title={labelTitleBath} logo={Bath} />
+        <Label title={labelTitlePark} logo={Parking} />
+        <Label title={labelTitleFeet + "sqft"} logo={Feet} />
       </Flex>
     </Flex>
   );
