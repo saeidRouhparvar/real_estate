@@ -8,8 +8,7 @@ import Navbar from "@/component/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme} >
-      <Navbar/>
+    <ChakraProvider theme={theme}>
       <Component  {...pageProps} />
     </ChakraProvider>
       
