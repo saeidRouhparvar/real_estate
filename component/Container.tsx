@@ -8,7 +8,7 @@ interface Interface extends BoxProps {
 
 const Container = ({children,...reset} :Interface) => {
     return(
-        <Box {...reset} maxW={pxToRem(1400)}>
+        <Box {...reset} w={'1400px'} m={'auto'}>
             {children}
         </Box>
     )
