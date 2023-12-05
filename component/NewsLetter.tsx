@@ -7,8 +7,9 @@ import VideoPic from '../public/PhotoVideo.png'
 
 const NewsLetter = () => {
   return (
-    <Container display={"flex"} mt={pxToRem(100)}>
-      <Flex
+    <Container >
+      <Flex mt={pxToRem(100)}>
+      <Flex 
         bg={`Color.ContentColor2`}
         direction={"column"}
         py={pxToRem(64)}
@@ -57,7 +58,7 @@ const NewsLetter = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Box as="img" src={VideoPic}/>
+      <Box as="img" src={VideoPic}/></Flex>
     </Container>
   );
 };
