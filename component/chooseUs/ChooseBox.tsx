@@ -1,23 +1,17 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, BoxProps, Flex } from "@chakra-ui/react";
 import { Piggy, PiggyTop } from "../svg";
 import Typography from "../Typography";
 import { pxToRem } from "../Utils";
 
-const ChooseBoxData = [
-  {
-    id: 1,
-    title: " Trusted By Thousands",
-    imgBig: PiggyTop,
-    imgChild: Piggy,
-    description:
-      "Distinctively re-engineer revolutionary meta-services and premium Atvero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis",
-  },
-  // {id:1,title:"",img:,description:""},
-  // {id:1,title:"",img:,description:""},
-  // {id:1,title:"",img:,description:""},
-];
+interface Interface extends BoxProps {
+  reset?: any;
+  title?: string;
+  imgBig?: any;
+  imgChild?: any;
+  description?: string;
+}
 
-const ChooseBox = ( title, imgBig, imgChild, description ):any => {
+const ChooseBox = ({ title, imgBig, imgChild, description }: Interface) => {
   return (
     <Flex
       direction={"column"}
@@ -25,14 +19,14 @@ const ChooseBox = ( title, imgBig, imgChild, description ):any => {
       padding={"48px 41px"}
     >
       <Flex gap={pxToRem(32)}>
-        <Box>{ChooseBoxData.imgBig}</Box>
-        <Box mt={"-20px"}>{ChooseBoxData.imgChild}</Box>
+        <Box>{imgBig}</Box>
+        <Box mt={"-20px"}>{imgChild}</Box>
       </Flex>
       <Box {...Typography.Box} color={`Color.ColorPrimary`} mt={pxToRem(46)}>
-        {ChooseBoxData.title}
+        {title}
       </Box>
       <Box mt={pxToRem(12)} color={`Color.LinkColor`} {...Typography.P}>
-        {ChooseBoxData.description}
+        {description}
       </Box>
     </Flex>
   );
