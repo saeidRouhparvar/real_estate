@@ -1,38 +1,49 @@
 import MainBanner from "@/component/MainBanner";
 import { pxToRem } from "@/component/Utils";
 import { Box, Flex } from "@chakra-ui/react";
-import Home from "../../public/img/Image.png";
+import Home from "../public/Image.png";
 import Navbar from "@/component/Navbar";
 import NewsLetter from "@/component/NewsLetter";
 import Typography from "@/component/Typography";
 import { HomeIcon, RightArrow } from "@/component/svg";
 import Button from "@/component/form/Button";
 import Properties from "@/component/properties/Properties";
+import { useHeader } from "@/context/headerContext";
+import { useEffect } from "react";
+import ChooseUs from "@/component/chooseUs/ChooseUs";
+import AboutUs from "@/component/aboutUs/AboutUs";
 
 const HomePage = () => {
   return (
     <>
       <Flex direction={"column"}>
         <Header />
-        <NewsLetter/>
-        <Properties/>
+        <NewsLetter />
+        <Properties />
+        <ChooseUs/>
+        <AboutUs/>
       </Flex>
     </>
   );
 };
 
 const Header = () => {
+  useHeader({
+    header: "url('/Banner.png')",
+    type: "big",
+  });
   return (
-    <Flex justifyContent={"space-between"}>
+
+    <Box>
+      <Navbar/>
+    <Flex
+      justifyContent={"space-between"}
+      pos={"absolute"}
+      top={pxToRem(400)}
+      left={pxToRem(278)}
+    >
       <Flex direction={"column"}>
-        <MainBanner />
-        <Flex
-          pos={"absolute"}
-          top={pxToRem(400)}
-          left={pxToRem(278)}
-          gap={pxToRem(38)}
-          direction={"column"}
-        >
+        <Flex gap={pxToRem(38)} direction={"column"}>
           <Flex
             w={pxToRem(375)}
             bg={
@@ -61,8 +72,9 @@ const Header = () => {
           />
         </Flex>
       </Flex>
-      <Box as="img" src="../public/Group 21.png" />
+      <Box as="img" src={"url(/Image.png)"} />
     </Flex>
+    </Box>
   );
 };
 
